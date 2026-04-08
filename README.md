@@ -4,6 +4,16 @@
 
 🌐 Deployed Link: [Evently Live App](https://evently-weld-five.vercel.app)
 
+> **Reviewer Demo Credentials (for project evaluation only)**
+>
+> **Admin Account**
+> - Email: `pulimimahesh7@gmail.com`
+> - Password: `Mahia@2025`
+>
+> **Sample User Account**
+> - Email: `sunnymahesh719@gmail.com`
+> - Password: `Mahia@2025`
+
 ---
 
 # 🚀 Evently — MERN Event Booking System
