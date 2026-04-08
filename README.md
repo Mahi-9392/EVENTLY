@@ -1,3 +1,11 @@
+## 🎥 Demo Video
+
+<video src="docs/demo/video1673076612.mp4" controls width="100%"></video>
+
+If the embedded player is unavailable on your viewer, use this direct file link: [Open demo video](docs/demo/video1673076612.mp4)
+
+---
+
 # 🚀 Evently — MERN Event Booking System
 
 Live Application: _TBD_
