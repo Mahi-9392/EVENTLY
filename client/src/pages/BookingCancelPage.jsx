@@ -13,9 +13,11 @@ export default function BookingCancelPage() {
           !
         </div>
         <h1 className="font-display text-2xl font-bold text-slate-900">Payment cancelled</h1>
-        <p className="mt-3 text-slate-600">No charge was made. You can return and try again anytime.</p>
-        <Link to="/" className="btn-gradient mt-8 inline-block w-full !py-3 text-center text-sm">
-          Browse events
+        <p className="mt-3 text-slate-600">
+          Your payment was not completed, so this booking remains unpaid. You can retry checkout anytime.
+        </p>
+        <Link to="/dashboard" className="btn-gradient mt-8 inline-block w-full !py-3 text-center text-sm">
+          Check dashboard status
         </Link>
       </motion.div>
     </div>

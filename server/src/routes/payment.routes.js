@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { body } from 'express-validator';
 import { authenticate, requireRole } from '../middleware/auth.middleware.js';
-import { createCheckout } from '../controllers/payment.controller.js';
+import { createCheckout, getCheckoutStatus } from '../controllers/payment.controller.js';
 
 const router = Router();
 
@@ -12,6 +12,7 @@ router.post(
 	[body('bookingId').isMongoId()],
 	createCheckout
 );
+router.get('/session-status/:sessionId', authenticate, requireRole('user'), getCheckoutStatus);
 
 export default router;
 
