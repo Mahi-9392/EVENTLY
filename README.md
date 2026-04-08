@@ -2,6 +2,8 @@
 
 [Watch Demo Video (Google Drive)](https://drive.google.com/file/d/1-wM_3gl84zSI-fh_bizgx2k8WgOhdmC1/view?usp=sharing)
 
+🌐 Deployed Link: [Evently Live App](https://evently-weld-five.vercel.app)
+
 ---
 
 # 🚀 Evently — MERN Event Booking System
