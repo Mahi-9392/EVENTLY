@@ -291,3 +291,48 @@ VITE_API_URL=http://localhost:5005/api
 
 MIT (or update as needed).
 
+---
+
+# 🖼️ Application Screenshots (Flow Order)
+
+## 1) Signup
+
+![Signup](docs/screenshots/SignUp%20Page.png)
+
+## 2) Login
+
+![Login](docs/screenshots/Login%20page.png)
+
+## 3) Home Page
+
+![Home 1](docs/screenshots/Home%20page.png)
+![Home 2](docs/screenshots/Home%20page-2.png)
+![Home 3](docs/screenshots/Home%20page-3.png)
+![Home 4](docs/screenshots/Home%20Page-4.png)
+
+## 4) Calendar
+
+![Calendar](docs/screenshots/Calender%20Pge.png)
+
+## 5) Admin Pages
+
+![Admin 1](docs/screenshots/Admin%20Page.png)
+![Admin 2](docs/screenshots/Admin-2.png)
+![Admin 3](docs/screenshots/Admin%20page-3.png)
+![Admin 4](docs/screenshots/Admin%20page-4.png)
+
+## 6) Dashboard Pages
+
+![Dashboard 1](docs/screenshots/Daashboard%20page.png)
+![Dashboard 2](docs/screenshots/Dashboard%20page-2.png)
+![Dashboard 3](docs/screenshots/Dashboard%20page-3.png)
+
+## 7) Booking
+
+![Booking](docs/screenshots/Booking%20page.png)
+
+## 8) Payment
+
+![Payment](docs/screenshots/payment%20page.png)
+![Payment Confirmation](docs/screenshots/payment%20confirmation%20page.png)
+
