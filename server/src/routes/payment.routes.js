@@ -12,7 +12,8 @@ router.post(
 	[body('bookingId').isMongoId()],
 	createCheckout
 );
-router.get('/session-status/:sessionId', authenticate, requireRole('user'), getCheckoutStatus);
+// Must be accessible right after Stripe redirect (token may be unavailable in some browsers).
+router.get('/session-status/:sessionId', getCheckoutStatus);
 
 export default router;
 

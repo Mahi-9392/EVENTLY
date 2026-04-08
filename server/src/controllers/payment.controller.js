@@ -88,9 +88,6 @@ export async function getCheckoutStatus(req, res) {
 	const { sessionId } = req.params;
 	const booking = await Booking.findOne({ checkoutSessionId: sessionId }).populate('eventId', 'title date location');
 	if (!booking) return res.status(404).json({ message: 'Checkout session not found' });
-	if (String(booking.userId) !== String(req.user.id)) {
-		return res.status(403).json({ message: 'Forbidden' });
-	}
 
 	res.json({
 		bookingId: booking._id,
