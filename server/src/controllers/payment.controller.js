@@ -1,7 +1,7 @@
 import { validationResult } from 'express-validator';
 import Booking from '../models/Booking.js';
 import Event from '../models/Event.js';
-import { createCheckoutSession, verifyStripeSignature } from '../services/stripe.service.js';
+import { createCheckoutSession, retrieveCheckoutSession, verifyStripeSignature } from '../services/stripe.service.js';
 
 export async function createCheckout(req, res) {
 	try {
@@ -88,6 +88,23 @@ export async function getCheckoutStatus(req, res) {
 	const { sessionId } = req.params;
 	const booking = await Booking.findOne({ checkoutSessionId: sessionId }).populate('eventId', 'title date location');
 	if (!booking) return res.status(404).json({ message: 'Checkout session not found' });
+
+	// Fallback sync: if webhook did not arrive yet, confirm with Stripe directly.
+	// This keeps UI accurate after redirect even without webhook setup.
+	if (booking.paymentStatus !== 'paid') {
+		try {
+			const session = await retrieveCheckoutSession(sessionId);
+			if (session.payment_status === 'paid') {
+				booking.paymentStatus = 'paid';
+				await booking.save();
+			} else if (session.status === 'expired') {
+				booking.paymentStatus = 'failed';
+				await booking.save();
+			}
+		} catch {
+			// Ignore Stripe fetch errors here; return current DB status.
+		}
+	}
 
 	res.json({
 		bookingId: booking._id,

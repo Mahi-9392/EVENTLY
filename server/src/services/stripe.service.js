@@ -27,6 +27,11 @@ export async function createCheckoutSession({ customerEmail, lineItems, metadata
 	});
 }
 
+export async function retrieveCheckoutSession(sessionId) {
+	const stripe = getStripeClient();
+	return stripe.checkout.sessions.retrieve(sessionId);
+}
+
 export function verifyStripeSignature(rawBody, sigHeader) {
 	const stripe = getStripeClient();
 	const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
